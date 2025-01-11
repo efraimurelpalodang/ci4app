@@ -94,8 +94,10 @@ class Routing extends BaseRouting
      *
      * If FALSE, will stop searching and do NO automatic routing.
      */
-    //! set ini agar bisa sama dengan pa sandika
-    public bool $autoRoute = true;
+    //! set ini jadi true agar bisa sama dengan pa sandika penjelasannya ada di chatGpt
+    //! jika ini false maka harus definisikan dulu didalam file routes.php
+    //! contoh $routes->get('Home/coba', 'Home::coba'); 
+    public bool $autoRoute = false;
 
     /**
      * For Defined Routes.
