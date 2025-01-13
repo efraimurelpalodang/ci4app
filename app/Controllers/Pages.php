@@ -10,17 +10,13 @@ class Pages extends BaseController
         'tittle' => 'Home',
         'tes' => ['satu','dua','tiga']
       ];
-      echo view('layouts/header', $data);
-      echo view('pages/home');
-      echo view('layouts/footer');
+      return view('pages/home', $data);
     }
     public function about()
     {
       $data = [
         'tittle' => 'About Me'
       ];
-      echo view('layouts/header', $data);
-      echo view('pages/about');
-      echo view('layouts/footer');
+      return view('pages/about', $data);
     }
 }
