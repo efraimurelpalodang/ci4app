@@ -17,7 +17,7 @@
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td><img src="" alt=""></td>
+            <td><img src="/img/naruto.jpg" alt="gambarSampul" class="sampul"></td>
             <td>Naruto</td>
             <td><a href="#" class="btn btn-success">Detail</a></td>
           </tr>
