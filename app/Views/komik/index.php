@@ -12,7 +12,7 @@
           <div class="card-body">
             <h5 class="card-title"><?= $k["judul"]; ?></h5>
             <p class="card-text"><?= $k["penulis"]; ?></p>
-            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="/komik/<?= $k["slug"]; ?>" class="btn btn-primary">Detail</a>
           </div>
         </div>
         <?php endforeach; ?>
