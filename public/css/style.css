@@ -1,7 +1,13 @@
 .sampul {
-  width: 70px;
+  max-width: 15rem;
+  max-height: 13rem;
+  object-fit: contain;
 }
 
-.table > tbody > tr > * {
-  vertical-align: middle;
+.card {
+  max-width: 15rem;
 }
+
+/* .table > tbody > tr > * {
+  vertical-align: middle;
+} */
