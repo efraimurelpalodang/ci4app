@@ -8,6 +8,23 @@
   max-width: 15rem;
 }
 
+#navbarNavAltMarkup .nav-link {
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-right: 1em;
+  font-size: .9em;
+}
+
+.kartu .judul {
+  margin-top: 13em;
+}
+.kartu .penulis {
+  margin-top: -1em;
+}
+.kartu .gambar {
+  height: 20em;
+}
+
 /* .table > tbody > tr > * {
   vertical-align: middle;
 } */
