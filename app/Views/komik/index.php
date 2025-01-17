@@ -2,7 +2,13 @@
 
 <?= $this->section('content'); ?>
 <div class="container">
+  <a href="create" class="btn btn-secondary">Tambah Data Komik</a>
   <h2 class="my-3">Daftar Komik</h2>
+  <?php if(session()->getFlashdata('pesan')) : ?>
+    <div class="alert alert-success" role="alert">
+      <?= session()->getFlashdata('pesan'); ?>
+    </div>
+  <?php endif; ?>
   <div class="d-flex gap-3">
     <?php foreach( $komik as $k ) : ?>
       <div class="card kartu position-relative">

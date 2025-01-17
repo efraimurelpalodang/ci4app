@@ -16,13 +16,13 @@
 }
 
 .kartu .judul {
-  margin-top: 13em;
+  margin-top: 8em;
 }
 .kartu .penulis {
   margin-top: -1em;
 }
 .kartu .gambar {
-  height: 20em;
+  height: 15em;
 }
 
 /* .table > tbody > tr > * {
