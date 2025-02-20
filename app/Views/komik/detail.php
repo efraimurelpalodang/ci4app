@@ -17,7 +17,11 @@
               <p class="card-text"><strong>Penerbit : </strong><small class="text-body-secondary"><?= $komik['penerbit']; ?></small></p>
 
               <a href="#" class="btn btn-secondary">Edit</a>
-              <a href="#" class="btn btn-danger">Delete</a>
+              <form action="/komik/<?= $komik['id']; ?>" method="post" class="d-inline">
+                <?= csrf_field(); ?>
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus komik <?= $komik['judul'] ?> ?')">Delete</button>
+              </form>
               <br>
               <a href="/komik">Kembali kedaftar komik</a>
             </div>

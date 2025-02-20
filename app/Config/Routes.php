@@ -12,11 +12,11 @@ use CodeIgniter\Router\RouteCollection;
 //   echo "Hello World";
 // });
 
-
 $routes->get('/', 'Pages::index');
 $routes->get('about', 'Pages::about');
 $routes->get('contact', 'Pages::contact');
 $routes->get('komik', 'Komik::index');
-$routes->get('komik/(:segment)','Komik::detail/$1');
+$routes->get('komik/(:any)','Komik::detail/$1');
 $routes->get('create','Komik::create');
 $routes->post('create/save','Komik::save');
+$routes->delete('komik/(:num)','Komik::delete/$1');
