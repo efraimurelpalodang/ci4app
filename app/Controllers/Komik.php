@@ -64,5 +64,34 @@ class Komik extends BaseController
     return redirect()->to('komik');
   }
 
+  public function edit($slug) {
+    $data = [
+      'tittle' => 'Ubah Data Komik',
+      'komik' =>  $this->komikModel->getKomik($slug)
+    ];
+
+    return view('komik/edit', $data);
+  }
+
+  public function update($id) 
+  {
+    if (!$this->validate([
+      
+    ]));
+
+    $slug = url_title($this->request->getVar('judul'),'-',true);
+    $this->komikModel->save([
+      'id' => $id,
+      'judul' => $this->request->getVar('judul'),
+      'slug' => $slug,
+      'penulis' => $this->request->getVar('penulis'),
+      'penerbit' => $this->request->getVar('penerbit'),
+      'sampul' => $this->request->getVar('sampul'),
+      'deskripsi' => $this->request->getVar('deskripsi')
+    ]);
+    session()->setFlashdata('pesan','Data berhasil diubah');
+    return redirect()->to('komik');
+  }
+
 
 }

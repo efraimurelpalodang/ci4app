@@ -20,3 +20,5 @@ $routes->get('komik/(:any)','Komik::detail/$1');
 $routes->get('create','Komik::create');
 $routes->post('create/save','Komik::save');
 $routes->delete('komik/(:num)','Komik::delete/$1');
+$routes->get('/edit/(:segment)','Komik::edit/$1');
+$routes->post('/edit/update/(:segment)','Komik::update/$1');
