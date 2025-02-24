@@ -5,16 +5,13 @@
   <div class="row">
     <div class="col-sm-8">
       <h2 class="mb-3">Tambah Data Komik</h2>
-      <?= validation_list_errors() ?>
       <?= form_open('create/save') ?>
         <?= csrf_field(); ?>
         <div class="mb-3 row">
           <label for="judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control is-invalid" id="judul" name="judul" aria-describedby="judulll" autofocus >
-            <div id="judulll" class="invalid-feedback">
-              Please provide a valid zip.
-            </div>
+            <input type="text" class="form-control" id="judul" name="judul" autofocus >
+            <?= validation_list_errors() ?>
           </div>
         </div>
         <div class="mb-3 row">
