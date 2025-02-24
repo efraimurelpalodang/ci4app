@@ -5,6 +5,7 @@ namespace App\Controllers;
 class Komik extends BaseController
 {
   protected $komikModel;
+  protected $helpers = ['form'];
 
   public function __construct()
   {
@@ -36,8 +37,10 @@ class Komik extends BaseController
 
   public function create()
   {
+    session();
     $data = [
-      'tittle' => 'Tambah Data Komik'
+      'tittle' => 'Tambah Data Komik',
+      'validation' => \config\Services::validation()
     ];
 
     return view('komik/create', $data);
@@ -45,6 +48,15 @@ class Komik extends BaseController
 
   public function save()
   {
+    // Validasi input
+    if(!$this->validate([
+      "judul" => "required|is_unique[komik.judul]"
+    ])) {
+      $validation = \config\Services::validation();
+      return redirect()->to('create')->withInput();
+    }
+
+
     $slug = url_title($this->request->getVar('judul'),'-',true);
     $this->komikModel->save([
       'judul' => $this->request->getVar('judul'),
