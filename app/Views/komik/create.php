@@ -10,32 +10,34 @@
         <div class="mb-3 row">
           <label for="judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="judul" name="judul" autofocus >
-            <?= validation_list_errors() ?>
+            <input type="text" class="form-control <?= (validation_show_error('judul')) ? 'is-invalid' : '' ?>" id="judul" name="judul" autofocus value="<?= old('judul') ?>">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              <?= validation_show_error('judul') ?>
+            </div>
           </div>
         </div>
         <div class="mb-3 row">
           <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="penulis" name="penulis">
+            <input type="text" class="form-control" id="penulis" name="penulis" value="<?= old('penulis') ?>">
           </div>
         </div>
         <div class="mb-3 row">
           <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="penerbit" name="penerbit">
+            <input type="text" class="form-control" id="penerbit" name="penerbit" value="<?= old('penerbit') ?>">
           </div>
         </div>
         <div class="mb-3 row">
           <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="sampul" name="sampul">
+            <input type="text" class="form-control" id="sampul" name="sampul" value="<?= old('sampul') ?>">
           </div>
         </div>
         <div class="mb-3 row">
           <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+            <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= old('deskripsi') ?>">
           </div>
         </div>
         <div class="col-auto">

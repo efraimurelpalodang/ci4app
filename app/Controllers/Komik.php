@@ -40,7 +40,6 @@ class Komik extends BaseController
     session();
     $data = [
       'tittle' => 'Tambah Data Komik',
-      'validation' => \config\Services::validation()
     ];
 
     return view('komik/create', $data);
@@ -50,9 +49,14 @@ class Komik extends BaseController
   {
     // Validasi input
     if(!$this->validate([
-      "judul" => "required|is_unique[komik.judul]"
+      "judul" => [
+        'rules' => 'required|is_unique[komik.judul]',
+        'errors' => [
+          'required' => '{field} komik harus diisi tidak boleh kosong.',
+          'is_unique' => '{field} komik sudah ada, silahkan pilih {field} komik yang lain.'
+        ]
+      ]
     ])) {
-      $validation = \config\Services::validation();
       return redirect()->to('create')->withInput();
     }
 
