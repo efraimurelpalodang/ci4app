@@ -82,8 +82,9 @@ class Komik extends BaseController
 
   public function edit($slug) {
     $data = [
-      'tittle' => 'Ubah Data Komik',
-      'komik' =>  $this->komikModel->getKomik($slug)
+      'tittle' => 'Form Ubah Data Komik',
+      'komik' =>  $this->komikModel->getKomik($slug),
+      'komik' => $this->komikModel->getKomik($slug)
     ];
 
     return view('komik/edit', $data);
@@ -91,9 +92,26 @@ class Komik extends BaseController
 
   public function update($id) 
   {
-    if (!$this->validate([
-      
-    ]));
+    // cek judul
+    $komikLama = $this->komikModel->getKomik($this->request->getVar('slug'));
+    if($komikLama['judul'] == $this->request->getVar('judul')) {
+      $rule_judul = 'required';
+    } else {
+      $rule_judul = 'required|is_unique[komik.judul]';
+    }
+    
+    // Validasi input
+    if(!$this->validate([
+      "judul" => [
+        'rules' => $rule_judul,
+        'errors' => [
+          'required' => '{field} komik harus diisi tidak boleh kosong.',
+          'is_unique' => '{field} komik sudah ada, silahkan pilih {field} komik yang lain.'
+        ]
+      ]
+    ])) {
+      return redirect()->to('/edit/'. $this->request->getVar('slug'))->withInput();
+    }
 
     $slug = url_title($this->request->getVar('judul'),'-',true);
     $this->komikModel->save([
