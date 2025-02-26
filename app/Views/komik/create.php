@@ -31,9 +31,12 @@
         <div class="mb-3 row">
           <div class="input-group mb-3">
             <label class="input-group-text" for="sampul">Pilih sampul</label>
-            <input type="file" class="form-control <?= (validation_show_error('sampul')) ? 'is-invalid' : '' ?>" id="sampul" name="sampul">
+            <input type="file" class="form-control <?= (validation_show_error('sampul')) ? 'is-invalid' : '' ?>" id="sampul" name="sampul" onchange="previewImg()">
             <div id="validationServerUsernameFeedback" class="invalid-feedback">
               <?= validation_show_error('sampul') ?>
+            </div>
+            <div class="col-sm-2">
+              <img src="/img/index.png" class="img-thumbnail img-preview">
             </div>
           </div>
         </div>
