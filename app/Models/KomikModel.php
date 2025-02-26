@@ -8,7 +8,7 @@ class KomikModel extends Model
 {
   protected $table = 'komik';
   protected $useTimestamps = true;
-  protected $allowedFields = ['judul','slug','penulis','penerbit','sampul'];
+  protected $allowedFields = ['judul','slug','penulis','penerbit','sampul','deskripsi'];
 
   public function getKomik($slug = false)
   {
