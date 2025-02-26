@@ -4,8 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <h2 class="mb-3">Tambah Data Komik</h2>
-      <?= form_open('create/save') ?>
+      <h2 class="mb-3">Form Tambah Data Komik</h2>
+      <?= form_open('create/save', ['enctype' => 'multipart/form-data']) ?>
         <?= csrf_field(); ?>
         <div class="mb-3 row">
           <label for="judul" class="col-sm-2 col-form-label">Judul</label>
@@ -29,9 +29,12 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="sampul" name="sampul" value="<?= old('sampul') ?>">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="sampul">Pilih sampul</label>
+            <input type="file" class="form-control <?= (validation_show_error('sampul')) ? 'is-invalid' : '' ?>" id="sampul" name="sampul">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              <?= validation_show_error('sampul') ?>
+            </div>
           </div>
         </div>
         <div class="mb-3 row">
