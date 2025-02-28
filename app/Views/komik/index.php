@@ -15,7 +15,7 @@
         <a href="komik/<?= $k['slug']; ?>">
           <img src="/img/<?= $k['sampul']; ?>" alt="sampul"  class="card-img gambar">
           <div class="card-img-overlay overflow-hidden">
-            <h5 class="card-title judul"><?= $k['judul']; ?></h5>
+            <h5 class="card-title judul text-uppercase"><?= $k['judul']; ?></h5>
             <p class="card-text penulis"><small>Last updated 3 mins ago</small></p>
           </div>
         </a>
