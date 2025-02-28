@@ -9,12 +9,12 @@
       <?= session()->getFlashdata('pesan'); ?>
     </div>
   <?php endif; ?>
-  <div class="d-flex gap-3">
+  <div class="d-flex gap-3 row mb-5">
     <?php foreach( $komik as $k ) : ?>
-      <div class="card kartu position-relative">
+      <div class="card kartu position-relative col-sm-2">
         <a href="komik/<?= $k['slug']; ?>">
           <img src="/img/<?= $k['sampul']; ?>" alt="sampul"  class="card-img gambar">
-          <div class="card-img-overlay">
+          <div class="card-img-overlay overflow-hidden">
             <h5 class="card-title judul"><?= $k['judul']; ?></h5>
             <p class="card-text penulis"><small>Last updated 3 mins ago</small></p>
           </div>
