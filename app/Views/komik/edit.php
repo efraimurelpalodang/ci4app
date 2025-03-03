@@ -44,7 +44,7 @@
               <?= validation_show_error('sampul') ?>
             </div>
             <div class="col-sm-2">
-              <img src="/img/<?= $komik['sampul']; ?>" class="img-thumbnail img-preview">
+              <img src="/img/<?= $komik['sampul']; ?>" class="img-thumbnail     img-preview">
             </div>
           </div>
         </div>
